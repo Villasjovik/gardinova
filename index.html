@@ -222,10 +222,14 @@ max-width:760px;margin-bottom:56px}
 .mq-mark{width:112px}
 .mq-nuu{width:164px}
 .mq-ved{width:140px}
-.mq-tine{width:168px}
+.mq-tine{width:240px}
 .mq-husq{width:90px}
 
 .mq-mn img{transform:translateY(-7px)}
+/* TineK Home — bred logga med tom marginal i SVG, scale-up så märket faktiskt syns */
+.mq-tine img,
+.mq-track img[alt*="TineK" i],
+.mq-track img[src*="tinek" i]{transform:scale(1.55);transform-origin:center}
 
 @media(max-width:860px){
   .mq-track{gap:46px}
@@ -233,8 +237,11 @@ max-width:760px;margin-bottom:56px}
   .mq-item::after{right:-27px;font-size:18px}
   .mq-lex{width:134px} .mq-mn{width:98px} .mq-seg{width:122px}
   .mq-mark{width:94px} .mq-nuu{width:138px} .mq-ved{width:118px}
-  .mq-tine{width:144px} .mq-husq{width:76px}
+  .mq-tine{width:206px} .mq-husq{width:76px}
   .mq-mn img{transform:translateY(-5px)}
+  .mq-tine img,
+  .mq-track img[alt*="TineK" i],
+  .mq-track img[src*="tinek" i]{transform:scale(1.5);transform-origin:center}
 }
 
 /* FYRA SPÅR */
@@ -305,17 +312,6 @@ border-radius:100px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
   .sp-c,.sp-grid>.sp-c:first-child,.sp-grid>.sp-c:nth-child(2):not(:last-child),.sp-grid>.sp-c:last-child:not(:first-child):not(:nth-child(2)),.sp-grid.sp-grid-4>.sp-c:nth-child(1),.sp-grid.sp-grid-4>.sp-c:nth-child(2),.sp-grid.sp-grid-4>.sp-c:nth-child(3),.sp-grid.sp-grid-4>.sp-c:nth-child(4){--sp-rot:0deg;--sp-base-y:0px}
 }
 
-/* CONCEPT */
-#sec-concept{position:relative;background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:120px 24px;overflow:hidden}
-.cn-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
-.cn-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(1,142,71,.2),transparent);top:-150px;left:-100px;animation:orbf 28s ease-in-out infinite}
-.cn-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(212,168,75,.1),transparent);bottom:-120px;right:-100px;animation:orbf 22s ease-in-out infinite;animation-delay:-11s}
-.cn-inner{position:relative;z-index:1;max-width:880px;margin:0 auto}
-.cn-body{display:flex;flex-direction:column;gap:22px;font-size:15.5px;line-height:1.85;color:rgba(242,237,228,.78)}
-.cn-body p{font-family:'Inter',sans-serif}
-.cn-body p em{font-style:italic;color:var(--warm)}
-.cn-body p b{color:var(--gold);font-weight:500}
-
 /* KANALEN */
 #sec-profil{position:relative;background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:120px 24px;overflow:hidden}
 .p-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
@@ -343,7 +339,7 @@ background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:
 @media(max-width:700px){.stats-grid{grid-template-columns:1fr}.sc{border-right:none;border-bottom:1px solid rgba(212,168,75,.1)}.sc:last-child{border-bottom:none}}
 
 /* GREEN SECTION SPHERE OVERLAY */
-#sec-profil::after, #sec-cta::after, #sec-concept::after{
+#sec-profil::after, #sec-cta::after{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
   background-image:
     radial-gradient(circle 1.6px at 42% 38%,
@@ -768,23 +764,6 @@ position:relative;overflow:hidden;transition:color .35s}
 
 <div class="gd"></div>
 
-<!-- CONCEPT -->
-<section id="sec-concept">
-  <div class="cn-orb cn-orb-1" aria-hidden="true"></div>
-  <div class="cn-orb cn-orb-2" aria-hidden="true"></div>
-  <div class="cn-inner">
-    <p class="sec-lbl rv">Tanken bakom</p>
-    <h2 class="sec-h2 rv">Gardiner som <em>passar in</em> &mdash; som om de alltid funnits <em>där</em>.</h2>
-    <div class="cn-body">
-      <p class="rv d1">Gardinova gör <b>måttbeställda gardiner i premiumkvalitet</b> &mdash; våglagda, sammet, linne, mörkläggning. Skenan ingår, monteringen ingår, hembesöket ingår. Skräddarsytt per fönster, levererat av ett tvåpersonsteam som bryr sig om varje detalj.</p>
-      <p class="rv d2">Villa Sjövik är ett hem där fönstren redan bär dagsljus och stillhet. När gardiner väljs där handlar det inte om dekoration &mdash; det handlar om hur ljuset filtreras, hur rummet blir hemmare när skymningen kommer, hur en draperi-fall kan lugna en hel vägg. <em>Hantverk möter en vardag där materialen faktiskt får leva.</em></p>
-      <p class="rv d3">Det här förslaget följer Gardinovas faktiska tjänsteflöde &mdash; mätningen, monteringen, helhetsintrycket. Tre fristående filmar med tre olika tyngdpunkter, men en gemensam berättelse: gardiner som inte bara hängs upp utan blir en del av hemmet.</p>
-    </div>
-  </div>
-</section>
-
-<div class="gd"></div>
-
 <!-- FYRA SPÅR -->
 <section id="sec-spar">
   <div class="sp-orb sp-orb-1" aria-hidden="true"></div>
@@ -813,8 +792,8 @@ position:relative;overflow:hidden;transition:color .35s}
         <p class="sp-eyebrow">Spår 03</p>
         <h3>Ljuset som följer veckorna</h3>
         <p class="sp-sub">"Helhetsintrycket &mdash; veckor efter installation"</p>
-        <p class="sp-body">Efter-känslan, när gardinerna hunnit bli en del av hemmet. Morgon vid köksbordet med linnefall som filtrerar dagsljuset, eftermiddag i vardagsrummet med sammet som dämpar lugn, kväll med mörkläggning som sluter dagen. Vardagsscener där produkten inte längre märks &mdash; den bara är där, som om den alltid funnits.</p>
-        <span class="sp-tag">Vardagsscener &middot; Ljusinsläpp &middot; Helhet</span>
+        <p class="sp-body">Efter-känslan, när gardinerna hunnit bli en del av hemmet. Filmen sätter de bara fönstren mot rummet med gardinerna på plats &mdash; samma vinkel, samma ljus, men en helt annan känsla. Vardagsscener där produkten inte längre märks &mdash; den bara är där, som om den alltid funnits.</p>
+        <span class="sp-tag">Före/efter &middot; Vardagsscener &middot; Helhet</span>
       </div>
 
       <div class="sp-c rv d4">
@@ -1175,11 +1154,10 @@ if(spotSec){
   const mqEl=document.getElementById('sec-mq');
   const sections=[
     {id:'sec-hero',label:'Intro',scrollTo:()=>0},
-    {id:'sec-concept',label:'Tanken',
-      scrollTo:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY-90):document.getElementById('sec-concept').getBoundingClientRect().top+window.scrollY-30,
-      trackStart:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY):document.getElementById('sec-concept').getBoundingClientRect().top+window.scrollY
+    {id:'sec-spar',label:'Fyra spår',
+      scrollTo:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY-90):document.getElementById('sec-spar').getBoundingClientRect().top+window.scrollY-30,
+      trackStart:()=>mqEl?(mqEl.getBoundingClientRect().top+window.scrollY):document.getElementById('sec-spar').getBoundingClientRect().top+window.scrollY
     },
-    {id:'sec-spar',label:'Fyra spår'},
     {id:'sec-profil',label:'Kanalen'},
     {id:'sec-pr',label:'Investering'},
     {id:'sec-cta',label:'Kontakt'}
